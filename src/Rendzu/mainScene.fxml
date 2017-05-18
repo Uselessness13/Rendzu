@@ -2,15 +2,257 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0"
+            prefWidth="1030.0" styleClass="pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.131"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Rendzu.Controller">
+    <children>
+        <Label fx:id="labelForWhosTurnToGo" alignment="CENTER" contentDisplay="CENTER" layoutX="794.0" layoutY="23.0"
+               prefHeight="54.0" prefWidth="204.0" text="sdfgjh" textAlignment="CENTER">
+            <font>
+                <Font name="Chiller" size="36.0"/>
+            </font>
+        </Label>
+        <Pane fx:id="p0000" layoutX="28.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0001" layoutX="67.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0002" layoutX="106.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0003" layoutX="145.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0004" layoutX="184.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0005" layoutX="223.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0006" layoutX="262.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0007" layoutX="301.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0008" layoutX="340.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0009" layoutX="379.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0010" layoutX="418.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0011" layoutX="457.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0012" layoutX="496.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0013" layoutX="535.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0014" layoutX="574.0" layoutY="28.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="623.0" prefWidth="1030.0" styleClass="pane" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.131" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="794.0" layoutY="23.0" prefHeight="54.0" prefWidth="204.0" text="sdfgjh" textAlignment="CENTER">
-         <font>
-            <Font name="Chiller" size="36.0" />
-         </font>
-      </Label>
-   </children>
+        <Pane fx:id="p0100" layoutX="28.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0101" layoutX="67.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0102" layoutX="106.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0103" layoutX="145.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0104" layoutX="184.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0105" layoutX="223.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0106" layoutX="262.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0107" layoutX="301.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0108" layoutX="340.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0109" layoutX="379.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0110" layoutX="418.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0111" layoutX="457.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0112" layoutX="496.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0113" layoutX="535.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0114" layoutX="574.0" layoutY="67.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0200" layoutX="28.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0201" layoutX="67.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0202" layoutX="106.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0203" layoutX="145.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0204" layoutX="184.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0205" layoutX="223.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0206" layoutX="262.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0207" layoutX="301.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0208" layoutX="340.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0209" layoutX="379.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0210" layoutX="418.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0211" layoutX="457.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0212" layoutX="496.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0213" layoutX="535.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0214" layoutX="574.0" layoutY="106.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0300" layoutX="28.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0301" layoutX="67.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0302" layoutX="106.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0303" layoutX="145.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0304" layoutX="184.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0305" layoutX="223.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0306" layoutX="262.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0307" layoutX="301.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0308" layoutX="340.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0309" layoutX="379.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0310" layoutX="418.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0311" layoutX="457.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0312" layoutX="496.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0313" layoutX="535.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0314" layoutX="574.0" layoutY="145.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0400" layoutX="28.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0401" layoutX="67.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0402" layoutX="106.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0403" layoutX="145.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0404" layoutX="184.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0405" layoutX="223.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0406" layoutX="262.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0407" layoutX="301.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0408" layoutX="340.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0409" layoutX="379.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0410" layoutX="418.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0411" layoutX="457.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0412" layoutX="496.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0413" layoutX="535.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0414" layoutX="574.0" layoutY="184.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0500" layoutX="28.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0501" layoutX="67.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0502" layoutX="106.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0503" layoutX="145.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0504" layoutX="184.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0505" layoutX="223.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0506" layoutX="262.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0507" layoutX="301.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0508" layoutX="340.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0509" layoutX="379.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0510" layoutX="418.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0511" layoutX="457.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0512" layoutX="496.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0513" layoutX="535.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0514" layoutX="574.0" layoutY="223.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0600" layoutX="28.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0601" layoutX="67.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0602" layoutX="106.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0603" layoutX="145.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0604" layoutX="184.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0605" layoutX="223.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0606" layoutX="262.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0607" layoutX="301.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0608" layoutX="340.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0609" layoutX="379.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0610" layoutX="418.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0611" layoutX="457.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0612" layoutX="496.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0613" layoutX="535.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0614" layoutX="574.0" layoutY="262.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0700" layoutX="28.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0701" layoutX="67.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0702" layoutX="106.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0703" layoutX="145.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0704" layoutX="184.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0705" layoutX="223.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0706" layoutX="262.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0707" layoutX="301.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0708" layoutX="340.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0709" layoutX="379.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0710" layoutX="418.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0711" layoutX="457.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0712" layoutX="496.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0713" layoutX="535.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0714" layoutX="574.0" layoutY="301.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0800" layoutX="28.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0801" layoutX="67.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0802" layoutX="106.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0803" layoutX="145.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0804" layoutX="184.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0805" layoutX="223.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0806" layoutX="262.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0807" layoutX="301.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0808" layoutX="340.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0809" layoutX="379.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0810" layoutX="418.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0811" layoutX="457.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0812" layoutX="496.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0813" layoutX="535.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0814" layoutX="574.0" layoutY="340.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p0900" layoutX="28.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p0901" layoutX="67.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0902" layoutX="106.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0903" layoutX="145.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0904" layoutX="184.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0905" layoutX="223.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0906" layoutX="262.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0907" layoutX="301.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0908" layoutX="340.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0909" layoutX="379.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0910" layoutX="418.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0911" layoutX="457.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0912" layoutX="496.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0913" layoutX="535.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p0914" layoutX="574.0" layoutY="379.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p1000" layoutX="28.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p1001" layoutX="67.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1002" layoutX="106.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1003" layoutX="145.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1004" layoutX="184.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1005" layoutX="223.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1006" layoutX="262.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1007" layoutX="301.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1008" layoutX="340.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1009" layoutX="379.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1010" layoutX="418.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1011" layoutX="457.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1012" layoutX="496.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1013" layoutX="535.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1014" layoutX="574.0" layoutY="418.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p1100" layoutX="28.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p1101" layoutX="67.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1102" layoutX="106.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1103" layoutX="145.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1104" layoutX="184.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1105" layoutX="223.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1106" layoutX="262.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1107" layoutX="301.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1108" layoutX="340.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1109" layoutX="379.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1110" layoutX="418.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1111" layoutX="457.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1112" layoutX="496.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1113" layoutX="535.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1114" layoutX="574.0" layoutY="457.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p1200" layoutX="28.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p1201" layoutX="67.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1202" layoutX="106.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1203" layoutX="145.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1204" layoutX="184.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1205" layoutX="223.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1206" layoutX="262.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1207" layoutX="301.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1208" layoutX="340.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1209" layoutX="379.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1210" layoutX="418.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1211" layoutX="457.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1212" layoutX="496.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1213" layoutX="535.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1214" layoutX="574.0" layoutY="496.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p1300" layoutX="28.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p1301" layoutX="67.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1302" layoutX="106.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1303" layoutX="145.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1304" layoutX="184.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1305" layoutX="223.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1306" layoutX="262.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1307" layoutX="301.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1308" layoutX="340.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1309" layoutX="379.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1310" layoutX="418.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1311" layoutX="457.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1312" layoutX="496.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1313" layoutX="535.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1314" layoutX="574.0" layoutY="535.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+
+        <Pane fx:id="p1400" layoutX="28.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0"  prefWidth="39.0"/>
+        <Pane fx:id="p1401" layoutX="67.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1402" layoutX="106.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1403" layoutX="145.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1404" layoutX="184.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1405" layoutX="223.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1406" layoutX="262.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1407" layoutX="301.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1408" layoutX="340.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1409" layoutX="379.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1410" layoutX="418.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1411" layoutX="457.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1412" layoutX="496.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1413" layoutX="535.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+        <Pane fx:id="p1414" layoutX="574.0" layoutY="574.0" onMouseClicked="#testForPane" prefHeight="39.0" prefWidth="39.0"/>
+    </children>
 </AnchorPane>
