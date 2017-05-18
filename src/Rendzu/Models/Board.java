@@ -28,7 +28,11 @@ public class Board {
             this.board[i][j] = eye;
     }
 
-    void makestep(int i, int j, int eye) {
+    public int getIJ(int i, int j){
+        return this.board[i][j];
+    }
+
+    public void makeStep(int i, int j, int eye) {
         if (eye == 1 && active == 1) {
             if (true) {
                 setIJ(i, j, eye);
