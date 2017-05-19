@@ -255,6 +255,8 @@ public class Controller {
     public Label labelForWhosTurnToGo;
     public Board board;
     int active;
+    boolean gamestarted;
+    private int numberOfPassedSteps;
     public Pane p0000;
     public Pane p0001;
     public Pane p0002;
@@ -502,24 +504,34 @@ public class Controller {
                 panes[i][j].getChildren().clear();
         board = new Board();
         active = 1;
+        gamestarted = true;
+        numberOfPassedSteps = 0;
+        observer();
+    }
+
+    void recognize() {
+        labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (active == 1 ? "YOU" : "ALIEN") : "DRAW");
+    }
+
+    void observer() {
         painter();
+        recognize();
     }
 
     public void clickOnPane(MouseEvent e) {
-        System.out.println(e.getSource());
-
         Pane p = (Pane) e.getSource();
 
         int ii = 0, jj = 0;
         for (int i = 0; i < 15; i++)
             for (int j = 0; j < 15; j++)
-                if (panes[i][j].equals(p)){
+                if (panes[i][j].equals(p)) {
                     ii = i;
                     jj = j;
                 }
-        board.makeStep(ii,jj,active);
-        active = active == 1 ? -1 : 1;
-        painter();
+        if (gamestarted) {
+            active = board.makeStep(ii, jj, active);
+        }
+        observer();
     }
 
     void painter() {
@@ -535,6 +547,15 @@ public class Controller {
                         break;
                     }
                 }
+    }
+
+    public void passStep() {
+        if (board.getNumberOfSteps() > 6) {
+            active *= -1;
+            board.setActive(active);
+            numberOfPassedSteps++;
+        }
+        observer();
     }
 
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -252,5 +253,6 @@
         <Pane fx:id="p1413" layoutX="535.0" layoutY="574.0" onMouseClicked="#clickOnPane" prefHeight="39.0" prefWidth="39.0" />
         <Pane fx:id="p1414" layoutX="574.0" layoutY="574.0" onMouseClicked="#clickOnPane" prefHeight="39.0" prefWidth="39.0" />
       <Label fx:id="ng" layoutX="656.0" layoutY="528.0" onMouseClicked="#newGame" prefHeight="75.0" prefWidth="353.0" />
+      <Button fx:id="passer" layoutX="716.0" layoutY="383.0" mnemonicParsing="false" onAction="#passStep" text="pass" />
     </children>
 </AnchorPane>
