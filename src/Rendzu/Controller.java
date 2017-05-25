@@ -253,9 +253,8 @@ public class Controller {
     }
 
     public Label labelForWhosTurnToGo;
-    public Board board;
+    private Board board;
     int active;
-    boolean gamestarted;
     private int numberOfPassedSteps;
     public Pane p0000;
     public Pane p0001;
@@ -503,8 +502,7 @@ public class Controller {
             for (int j = 0; j < 15; j++)
                 panes[i][j].getChildren().clear();
         board = new Board();
-        active = 1;
-        gamestarted = true;
+        active = board.getActive();
         numberOfPassedSteps = 0;
         observer();
     }
@@ -528,8 +526,9 @@ public class Controller {
                     ii = i;
                     jj = j;
                 }
-        if (gamestarted) {
-            active = board.makeStep(ii, jj, active);
+        if (board.getGame()) {
+            board.makeStep(ii, jj, active);
+            active = board.getActive();
         }
         observer();
     }

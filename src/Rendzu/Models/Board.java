@@ -1,5 +1,7 @@
 package Rendzu.Models;
 
+import sun.misc.Unsafe;
+
 import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 
@@ -10,6 +12,7 @@ public class Board {
     private int[][] board;
     private int active;
     private int numberOfSteps;
+    private boolean gamestarted;
 
 
     public Board() {
@@ -19,7 +22,9 @@ public class Board {
             for (int j = 0; j < 15; j++)
                 this.board[i][j] = i == 7 && j == 7 ? -1 : 0;
         numberOfSteps = 1;
+        gamestarted = true;
     }
+
 
     Board(Board board) {
         this.board = new int[15][15];
@@ -27,6 +32,7 @@ public class Board {
             for (int j = 0; j < 15; j++)
                 this.board[i][j] = board.board[i][j];
         this.numberOfSteps = board.numberOfSteps;
+        this.gamestarted = board.gamestarted;
     }
 
     void setIJ(int i, int j, int eye) {
@@ -40,13 +46,22 @@ public class Board {
         return this.board[i][j];
     }
 
-    public int makeStep(int i, int j, int eye) {
-        if (board[i][j] == 0 && rulesCheck(i, j, eye)) {
-            setIJ(i, j, eye);
-            active *= -1;
+    public void makeStep(int i, int j, int eye) {
+        if (gamestarted) {
+            if (board[i][j] == 0 && rulesCheck(i, j, eye)) {
+                setIJ(i, j, eye);
+                this.active *= -1;
+            }
+            System.out.println(numberOfSteps);
         }
-        System.out.println(numberOfSteps);
-        return active;
+    }
+
+    public int getActive(){
+        return this.active;
+    }
+
+    public boolean getGame(){
+        return this.gamestarted;
     }
 
     public boolean rulesCheck(int i, int j, int eye) {
