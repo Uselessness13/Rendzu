@@ -4,6 +4,7 @@ import sun.misc.Unsafe;
 
 import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by Useless on 15.05.2017.
@@ -25,6 +26,13 @@ public class Board {
         gamestarted = true;
     }
 
+    public void print() {
+        int[][] rows = getRows();
+        System.out.println("Rows");
+        for (int i = 0; i < rows.length; i++) {
+            System.out.println(Arrays.toString(rows[i]));
+        }
+    }
 
     Board(Board board) {
         this.board = new int[15][15];
@@ -54,13 +62,14 @@ public class Board {
             }
             System.out.println(numberOfSteps);
         }
+        print();
     }
 
-    public int getActive(){
+    public int getActive() {
         return this.active;
     }
 
-    public boolean getGame(){
+    public boolean getGame() {
         return this.gamestarted;
     }
 
@@ -72,59 +81,155 @@ public class Board {
                 }
             } else return true;
         } else if (eye == -1 && active == -1) {
-            if (numberOfSteps == 2) {
-                if ((i >= 5 && i <= 9) && (j >= 5 && j <= 9)) {
-                    return true;
+            if (numberOfSteps == 2) if ((i >= 5 && i <= 9) && (j >= 5 && j <= 9)) return true;
+            else {
+                Board newBoard = new Board(this);
+                newBoard.setIJ(i, j, eye);
+
+                int ux = i - 1, uanswer = 0;
+                while (ux >= 0) {
+                    if (board[ux][j] == eye) {
+                        uanswer++;
+                    } else break;
+                    ux--;
                 }
-            } else return true;
+
+                int dx = i + 1, danswer = 0;
+                while (dx < 15) {
+                    if (board[ux][j] == eye) {
+                        danswer++;
+                    } else break;
+                    dx++;
+                }
+
+                int rx = j + 1, ranswer = 0;
+                while (rx < 15) {
+                    if (board[i][rx] == eye) {
+                        ranswer++;
+                    } else break;
+                    rx++;
+                }
+
+                int lx = j - 1, lanswer = 0;
+                while (lx >= 0) {
+                    if (board[i][lx] == eye) {
+                        lanswer++;
+                    } else break;
+                    lx--;
+                }
+
+                int ulx = i - 1, uly = j - 1;
+                int ulanswer = 0;
+                while (ulx >= 0 && uly >= 0) {
+                    if (board[ulx][uly] == eye) {
+                        ulanswer++;
+                    } else break;
+                    ulx--;
+                    uly--;
+                }
+                int urx = i - 1, ury = j + 1;
+                int uranswer = 0;
+                while (urx >= 0 && ury <= 15) {
+                    if (board[urx][ury] == eye) {
+                        uranswer++;
+                    } else break;
+                    urx--;
+                    ury++;
+                }
+
+                int dlx = i + 1, dly = j - 1;
+                int dlanswer = 0;
+                while (dlx <= 15 && dly >= 0) {
+                    if (board[dlx][dly] == eye) {
+                        dlanswer++;
+                    } else break;
+                    dlx++;
+                    dly--;
+                }
+                int drx = i + 1, dry = j + 1;
+                int dranswer = 0;
+                while (drx <= 15 && dry <= 15) {
+                    if (board[drx][dry] == eye) {
+                        dranswer++;
+                    } else break;
+                    drx++;
+                    dry++;
+                }
+
+
+                int[] ways = new int[]{danswer, dlanswer, dranswer, lanswer, ranswer, uanswer, ulanswer, uranswer};
+
+                // проверяем прямые
+
+                // проверка на длинный ряд
+                if (danswer + uanswer == 5 || lanswer + ranswer == 5 || dlanswer + uranswer == 5 || ulanswer + dranswer == 5)
+                    return false;
+                // хз зачем
+                else if (danswer + uanswer == 4 || lanswer + ranswer == 4 || dlanswer + uranswer == 4 || ulanswer + dranswer == 4)
+                    return true;
+
+                // скорее всего оно не нужно
+//                int max = 0;
+//                for (int k = 0; k < 8; k++)
+//                    for (int l = 0; l < 8; l++)
+//                        if (k != l)
+//                            if (ways[k] + ways[l] > max)
+//                                max = ways[k] + ways[l];
+//
+//                if (max == )
+                // до сюда
+            }
         }
-        return false;
+        return true;
+
     }
 
     public void setActive(int active) {
         this.active = active;
     }
 
-    public ArrayList<ArrayList<int[]>> getLines(int eye) {
-        ArrayList<ArrayList<int[]>> lines = new ArrayList<>();
-
-        int i = 0;
-        for (int k = 0; k < 15; k++) {
-            while (i < 14) {
-                if (board[k][i] == eye) {
-                    ArrayList<int[]> currentLine = new ArrayList<>();
-                    int j = i + 1;
-                    currentLine.add(new int[]{k, i});
-                    while (j < 15) {
-                        if (board[k][j] == eye) {
-                            currentLine.add(new int[]{k, j});
-                            j++;
-                        } else {
-                            i = j;
-                            break;
-                        }
-                    }
-                    lines.add(currentLine);
-                }
-                if (board[i][k] == eye) {
-                    ArrayList<int[]> currentRow = new ArrayList<>();
-                    int j = i + 1;
-                    currentRow.add(new int[]{i, k});
-                    while (j < 15) {
-                        if (board[j][k] == eye) {
-                            currentRow.add(new int[]{j, k});
-                            j++;
-                        } else {
-                            i = j;
-                            break;
-                        }
-                    }
-                    lines.add(currentRow);
-                }
-            }
+    public int[][] getRows() {
+        int[][] rows = new int[15][15];
+        for (int i = 0; i < 15; i++) {
+            rows[i] = board[i];
         }
+        return rows;
+    }
 
-        return lines;
+    public int[][] getColumns() {
+        int[][] columns = new int[15][15];
+        for (int i = 0; i < 15; i++) {
+            int[] currentColumn = new int[15];
+            for (int j = 0; j < 15; j++) {
+                currentColumn[j] = board[j][i];
+            }
+            columns[i] = currentColumn;
+        }
+        return columns;
+    }
+
+    public int[][] getDiagonalsLeftToRight() {
+        int[][] diagonals = new int[15][15];
+        for (int i = 0; i < 15; i++) {
+            int[] currentDiagonal = new int[15 - i];
+            for (int j = i; j < 15 - i; j++) {
+                currentDiagonal[i] = board[j][i + j];
+            }
+            diagonals[i] = currentDiagonal;
+        }
+        return diagonals;
+    }
+
+    public int[][] getDiagonalsRightToLeft() {
+        int[][] diagonals = new int[15][15];
+        for (int i = 0; i < 15; i++) {
+            int[] currentDiagonal = new int[15 - i];
+            for (int j = i; j < 15 - i; j++) {
+                currentDiagonal[i] = board[i + j][j];
+            }
+            diagonals[i] = currentDiagonal;
+        }
+        return diagonals;
     }
 
     public int getNumberOfSteps() {
