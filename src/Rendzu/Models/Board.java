@@ -62,7 +62,7 @@ public class Board {
             }
             System.out.println(numberOfSteps);
         }
-        print();
+//        print();
     }
 
     public int getActive() {
@@ -81,8 +81,9 @@ public class Board {
                 }
             } else return true;
         } else if (eye == -1 && active == -1) {
-            if (numberOfSteps == 2) if ((i >= 5 && i <= 9) && (j >= 5 && j <= 9)) return true;
-            else {
+            if (numberOfSteps == 2) {
+                if ((i >= 5 && i <= 9) && (j >= 5 && j <= 9)) return true;
+            } else {
                 Board newBoard = new Board(this);
                 newBoard.setIJ(i, j, eye);
 
@@ -96,7 +97,7 @@ public class Board {
 
                 int dx = i + 1, danswer = 0;
                 while (dx < 15) {
-                    if (board[ux][j] == eye) {
+                    if (board[dx][j] == eye) {
                         danswer++;
                     } else break;
                     dx++;
@@ -156,33 +157,36 @@ public class Board {
                     dry++;
                 }
 
+                // пути, по которым просматриваем свои глаза
+                int[] ways = new int[]{ulanswer, uanswer, uranswer, ranswer, dranswer, danswer, dlanswer, lanswer};
 
-                int[] ways = new int[]{danswer, dlanswer, dranswer, lanswer, ranswer, uanswer, ulanswer, uranswer};
-
+                System.out.println(Arrays.toString(ways));
                 // проверяем прямые
-
                 // проверка на длинный ряд
                 if (danswer + uanswer == 5 || lanswer + ranswer == 5 || dlanswer + uranswer == 5 || ulanswer + dranswer == 5)
                     return false;
-                // хз зачем
-                else if (danswer + uanswer == 4 || lanswer + ranswer == 4 || dlanswer + uranswer == 4 || ulanswer + dranswer == 4)
-                    return true;
+                // проверка на вилки
+                int max = 0;
+                for (int k = 0; k < 7; k++)
+                    for (int l = k + 1; l < 8; l++)
+                        if (ways[k] + ways[l] > max) {
+                            max = ways[k] + ways[l];
+                            if (max == 4)
+                                return true;
+                        }
 
-                // скорее всего оно не нужно
-//                int max = 0;
-//                for (int k = 0; k < 8; k++)
-//                    for (int l = 0; l < 8; l++)
-//                        if (k != l)
-//                            if (ways[k] + ways[l] > max)
-//                                max = ways[k] + ways[l];
-//
-//                if (max == )
-                // до сюда
+                System.out.println("max: " + max);
+                if (max <= 4) {
+                    return true;
+                } else if (max == 6) {
+                    //проверка на вилку 3х3
+                } else return false;
             }
         }
-        return true;
-
+//            return true;
+        return false;
     }
+
 
     public void setActive(int active) {
         this.active = active;
