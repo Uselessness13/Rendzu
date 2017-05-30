@@ -252,6 +252,7 @@ public class Controller {
     }
 
     public Label labelForWhosTurnToGo;
+
     public Pane p0000;
     public Pane p0001;
     public Pane p0002;
