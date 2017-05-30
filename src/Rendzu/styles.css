@@ -5,5 +5,10 @@
     -fx-background-position: center center;
 }
 
-
+.button {
+    -fx-background-image: url(Images/buttonSkip.png);
+        -fx-background-repeat: stretch;
+        -fx-background-size: 350 71;
+        -fx-background-position: center center;
+}
 
