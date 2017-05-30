@@ -1,5 +1,6 @@
 package Rendzu;
 
+import Rendzu.Models.Board;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -252,7 +253,9 @@ public class Controller {
     }
 
     public Label labelForWhosTurnToGo;
-
+    private Board board;
+    int active;
+    private int numberOfPassedSteps;
     public Pane p0000;
     public Pane p0001;
     public Pane p0002;
@@ -493,15 +496,66 @@ public class Controller {
     public Pane p1413;
     public Pane p1414;
 
-
-    public void testForPane(MouseEvent e) {
-        System.out.println(e.getSource());
-
-        Pane p = (Pane) e.getSource();
-        p.getChildren().add(new ImageView("Rendzu/Images/enemyEye.png"));
-
+    public void newGame() {
+        setPanes();
+        for (int i = 0; i < 15; i++)
+            for (int j = 0; j < 15; j++)
+                panes[i][j].getChildren().clear();
+        board = new Board();
+        active = board.getActive();
+        numberOfPassedSteps = 0;
+        observer();
     }
-    
+
+    void recognize() {
+        labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (active == 1 ? "YOU" : "ALIEN") : "DRAW");
+    }
+
+    void observer() {
+        painter();
+        recognize();
+    }
+
+    public void clickOnPane(MouseEvent e) {
+        Pane p = (Pane) e.getSource();
+
+        int ii = 0, jj = 0;
+        for (int i = 0; i < 15; i++)
+            for (int j = 0; j < 15; j++)
+                if (panes[i][j].equals(p)) {
+                    ii = i;
+                    jj = j;
+                }
+        if (board.getGame()) {
+            board.makeStep(ii, jj, active);
+            active = board.getActive();
+        }
+        observer();
+    }
+
+    void painter() {
+        for (int i = 0; i < 15; i++)
+            for (int j = 0; j < 15; j++)
+                switch (board.getIJ(i, j)) {
+                    case 1: {
+                        panes[i][j].getChildren().add(new ImageView("Rendzu/Images/ourEye.png"));
+                        break;
+                    }
+                    case -1: {
+                        panes[i][j].getChildren().add(new ImageView("Rendzu/Images/enemyEye.png"));
+                        break;
+                    }
+                }
+    }
+
+    public void passStep() {
+        if (board.getNumberOfSteps() > 6) {
+            active *= -1;
+            board.setActive(active);
+            numberOfPassedSteps++;
+        }
+        observer();
+    }
 
 
 }
