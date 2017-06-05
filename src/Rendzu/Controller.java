@@ -254,7 +254,6 @@ public class Controller {
 
     public Label labelForWhosTurnToGo;
     private Board board;
-    int active;
     private int numberOfPassedSteps;
     public Pane p0000;
     public Pane p0001;
@@ -502,15 +501,14 @@ public class Controller {
             for (int j = 0; j < 15; j++)
                 panes[i][j].getChildren().clear();
         board = new Board();
-        active = board.getActive();
         numberOfPassedSteps = 0;
         observer();
     }
 
     void recognize() {
-        labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (active == 1 ? "YOU" : "ALIEN") : "DRAW");
-        if (board.checkforwin(active))
-            labelForWhosTurnToGo.setText(active == 1 ? "U WIN" : "U LOSE");
+        labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (board.getActive() == 1 ? "YOU" : "ALIEN") : "DRAW");
+        if (board.checkForWin(board.getActive()))
+            labelForWhosTurnToGo.setText(board.getActive() == 1 ? "U WIN" : "U LOSE");
     }
 
     void observer() {
@@ -529,8 +527,8 @@ public class Controller {
                     jj = j;
                 }
         if (board.getGame()) {
-            board.makeStep(ii, jj, active);
-            active = board.getActive();
+            board.makeStep(ii, jj, board.getActive());
+
         }
         observer();
     }
@@ -551,11 +549,7 @@ public class Controller {
     }
 
     public void passStep() {
-        if (board.getNumberOfSteps() > 6) {
-            active *= -1;
-            board.setActive(active);
-            numberOfPassedSteps++;
-        }
+        board.passStep();
         observer();
     }
 
