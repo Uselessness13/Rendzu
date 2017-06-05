@@ -1,9 +1,5 @@
 package Rendzu.Models;
 
-import sun.misc.Unsafe;
-
-import java.awt.image.AreaAveragingScaleFilter;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -178,7 +174,7 @@ public class Board {
 
         int dlx = i + 1, dly = j - 1;
         int dlanswer = 0;
-        while (dlx <= 15 && dly >= 0) {
+        while (dlx < 15 && dly >= 0) {
             if (board[dlx][dly] == eye) {
                 dlanswer++;
             } else break;
@@ -187,7 +183,7 @@ public class Board {
         }
         int drx = i + 1, dry = j + 1;
         int dranswer = 0;
-        while (drx <= 15 && dry <= 15) {
+        while (drx < 15 && dry < 15) {
             if (board[drx][dry] == eye) {
                 dranswer++;
             } else break;
