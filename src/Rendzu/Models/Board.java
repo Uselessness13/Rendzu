@@ -29,21 +29,20 @@ public class Board {
     public void print() {
         int[][] rows = getRows();
         System.out.println("Rows");
-        for (int i = 0; i < rows.length; i++) {
-            System.out.println(Arrays.toString(rows[i]));
+        for (int[] row : rows) {
+            System.out.println(Arrays.toString(row));
         }
     }
 
-    Board(Board board) {
+    public Board(Board board) {
         this.board = new int[15][15];
         for (int i = 0; i < 15; i++)
-            for (int j = 0; j < 15; j++)
-                this.board[i][j] = board.board[i][j];
+            System.arraycopy(board.board[i], 0, this.board[i], 0, 15);
         this.numberOfSteps = board.numberOfSteps;
         this.gamestarted = board.gamestarted;
     }
 
-    void setIJ(int i, int j, int eye) {
+    private void setIJ(int i, int j, int eye) {
         if (this.board[i][j] == 0) {
             this.board[i][j] = eye;
             numberOfSteps++;
@@ -58,11 +57,11 @@ public class Board {
         if (gamestarted) {
             if (board[i][j] == 0 && rulesCheck(i, j, eye)) {
                 setIJ(i, j, eye);
+                gamestarted = !checkforwin(active);
                 this.active *= -1;
             }
             System.out.println(numberOfSteps);
         }
-//        print();
     }
 
     public int getActive() {
@@ -86,82 +85,21 @@ public class Board {
             } else {
                 Board newBoard = new Board(this);
                 newBoard.setIJ(i, j, eye);
-
-                int ux = i - 1, uanswer = 0;
-                while (ux >= 0) {
-                    if (board[ux][j] == eye) {
-                        uanswer++;
-                    } else break;
-                    ux--;
-                }
-
-                int dx = i + 1, danswer = 0;
-                while (dx < 15) {
-                    if (board[dx][j] == eye) {
-                        danswer++;
-                    } else break;
-                    dx++;
-                }
-
-                int rx = j + 1, ranswer = 0;
-                while (rx < 15) {
-                    if (board[i][rx] == eye) {
-                        ranswer++;
-                    } else break;
-                    rx++;
-                }
-
-                int lx = j - 1, lanswer = 0;
-                while (lx >= 0) {
-                    if (board[i][lx] == eye) {
-                        lanswer++;
-                    } else break;
-                    lx--;
-                }
-
-                int ulx = i - 1, uly = j - 1;
-                int ulanswer = 0;
-                while (ulx >= 0 && uly >= 0) {
-                    if (board[ulx][uly] == eye) {
-                        ulanswer++;
-                    } else break;
-                    ulx--;
-                    uly--;
-                }
-                int urx = i - 1, ury = j + 1;
-                int uranswer = 0;
-                while (urx >= 0 && ury <= 15) {
-                    if (board[urx][ury] == eye) {
-                        uranswer++;
-                    } else break;
-                    urx--;
-                    ury++;
-                }
-
-                int dlx = i + 1, dly = j - 1;
-                int dlanswer = 0;
-                while (dlx <= 15 && dly >= 0) {
-                    if (board[dlx][dly] == eye) {
-                        dlanswer++;
-                    } else break;
-                    dlx++;
-                    dly--;
-                }
-                int drx = i + 1, dry = j + 1;
-                int dranswer = 0;
-                while (drx <= 15 && dry <= 15) {
-                    if (board[drx][dry] == eye) {
-                        dranswer++;
-                    } else break;
-                    drx++;
-                    dry++;
-                }
-
                 // пути, по которым просматриваем свои глаза
-                int[] ways = new int[]{ulanswer, uanswer, uranswer, ranswer, dranswer, danswer, dlanswer, lanswer};
+                int[] ways = get8ways(i, j, eye);
+                int ulanswer = ways[0];
+                int uanswer = ways[1];
+                int uranswer = ways[2];
+                int ranswer = ways[3];
+                int dranswer = ways[4];
+                int danswer = ways[5];
+                int dlanswer = ways[6];
+                int lanswer = ways[7];
 
                 System.out.println(Arrays.toString(ways));
                 // проверяем прямые
+                if (danswer + uanswer == 4 || lanswer + ranswer == 4 || dlanswer + uranswer == 4 || ulanswer + dranswer == 4)
+                    return true;
                 // проверка на длинный ряд
                 if (danswer + uanswer == 5 || lanswer + ranswer == 5 || dlanswer + uranswer == 5 || ulanswer + dranswer == 5)
                     return false;
@@ -171,32 +109,117 @@ public class Board {
                     for (int l = k + 1; l < 8; l++)
                         if (ways[k] + ways[l] > max) {
                             max = ways[k] + ways[l];
-                            if (max == 4)
-                                return true;
                         }
-
                 System.out.println("max: " + max);
-                if (max <= 4) {
+                if (max < 4 || max % 2 > 0) {
                     return true;
-                } else if (max == 6) {
-                    //проверка на вилку 3х3
                 } else return false;
             }
         }
-//            return true;
         return false;
     }
-
 
     public void setActive(int active) {
         this.active = active;
     }
 
+
+    public int[] get8ways(int i, int j, int eye) {
+        int ux = i - 1, uanswer = 0;
+        while (ux >= 0) {
+            if (board[ux][j] == eye) {
+                uanswer++;
+            } else break;
+            ux--;
+        }
+
+        int dx = i + 1, danswer = 0;
+        while (dx < 15) {
+            if (board[dx][j] == eye) {
+                danswer++;
+            } else break;
+            dx++;
+        }
+
+        int rx = j + 1, ranswer = 0;
+        while (rx < 15) {
+            if (board[i][rx] == eye) {
+                ranswer++;
+            } else break;
+            rx++;
+        }
+
+        int lx = j - 1, lanswer = 0;
+        while (lx >= 0) {
+            if (board[i][lx] == eye) {
+                lanswer++;
+            } else break;
+            lx--;
+        }
+
+        int ulx = i - 1, uly = j - 1;
+        int ulanswer = 0;
+        while (ulx >= 0 && uly >= 0) {
+            if (board[ulx][uly] == eye) {
+                ulanswer++;
+            } else break;
+            ulx--;
+            uly--;
+        }
+        int urx = i - 1, ury = j + 1;
+        int uranswer = 0;
+        while (urx >= 0 && ury <= 15) {
+            if (board[urx][ury] == eye) {
+                uranswer++;
+            } else break;
+            urx--;
+            ury++;
+        }
+
+        int dlx = i + 1, dly = j - 1;
+        int dlanswer = 0;
+        while (dlx <= 15 && dly >= 0) {
+            if (board[dlx][dly] == eye) {
+                dlanswer++;
+            } else break;
+            dlx++;
+            dly--;
+        }
+        int drx = i + 1, dry = j + 1;
+        int dranswer = 0;
+        while (drx <= 15 && dry <= 15) {
+            if (board[drx][dry] == eye) {
+                dranswer++;
+            } else break;
+            drx++;
+            dry++;
+        }
+        return new int[]{ulanswer, uanswer, uranswer, ranswer, dranswer, danswer, dlanswer, lanswer};
+    }
+
+    public boolean checkforwin(int eye) {
+        boolean answer = false;
+        for (int i = 0; i < 15; i++)
+            for (int j = 0; j < 15; j++)
+                if (board[i][j] == eye) {
+                    int[] ways = get8ways(i, j, eye);
+                    for (int k = 0; k < ways.length; k++) {
+                        if (eye == -1) {
+                            if (ways[k] == 5)
+                                answer = true;
+                        } else {
+                            if (ways[k] >= 5)
+                                answer = true;
+                        }
+                    }
+                }
+
+        return answer;
+    }
+
     public int[][] getRows() {
         int[][] rows = new int[15][15];
-        for (int i = 0; i < 15; i++) {
-            rows[i] = board[i];
-        }
+        System.arraycopy(board, 0, rows, 0, 15);
         return rows;
     }
 

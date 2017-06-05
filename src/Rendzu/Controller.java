@@ -509,6 +509,8 @@ public class Controller {
 
     void recognize() {
         labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (active == 1 ? "YOU" : "ALIEN") : "DRAW");
+        if (board.checkforwin(active))
+            labelForWhosTurnToGo.setText(active == 1 ? "U WIN" : "U LOSE");
     }
 
     void observer() {
