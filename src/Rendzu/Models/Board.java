@@ -164,7 +164,7 @@ public class Board {
         }
         int urx = i - 1, ury = j + 1;
         int uranswer = 0;
-        while (urx >= 0 && ury <= 15) {
+        while (urx >= 0 && ury < 15) {
             if (board[urx][ury] == eye) {
                 uranswer++;
             } else break;
