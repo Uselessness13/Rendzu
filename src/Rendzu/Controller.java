@@ -503,7 +503,7 @@ public class Controller {
 
     public void newGame() {
         setPanes();
-        if (BOTCHECKBOX.isSelected()){
+        if (BOTCHECKBOX.isSelected()) {
             ai = new AI();
         }
         for (int i = 0; i < 15; i++)
@@ -542,12 +542,16 @@ public class Controller {
             board.makeStep(ii, jj, board.getActive());
             observer();
             System.out.println(board.getActive());
-            if (board.getActive() == -1 & BOTCHECKBOX.isSelected()){
-                int[] st = ai.calculate(board);
-                while (st == null){
-                    st = ai.calculate(board);
+            if (BOTCHECKBOX.isSelected()) {
+                System.out.println("selected");
+                if (board.getActive() == -1) {
+                    System.out.println("-1 kfkhjg");
+                    int[] st = ai.calculate(board);
+                    while (st == null) {
+                        st = ai.calculate(board);
+                    }
+                    board.makeStep(st[0], st[1], board.getActive());
                 }
-                board.makeStep(st[0], st[1], board.getActive());
             }
         }
         observer();

@@ -15,7 +15,7 @@ public class AI {
         int[] answer = new int[2];
         answer[0] = random.nextInt(15);
         answer[1] = random.nextInt(15);
-        if (board.getIJ(answer[0], answer[1]) == 0){
+        if (board.getIJ(answer[0], answer[1]) == 0 && board.rulesCheck(answer[0], answer[1], -1)){
             try {
                 Thread.sleep(50);
             } catch (InterruptedException e) {
