@@ -537,8 +537,13 @@ public class Controller {
                 }
         if (board.getGame()) {
             board.makeStep(ii, jj, board.getActive());
+            observer();
             if (BOTCHECKBOX.isSelected()){
                 int[] st = ai.calculate(board);
+                while (st == null){
+                    st = ai.calculate(board);
+                }
+                board.makeStep(st[0], st[1], board.getActive());
             }
         }
         observer();

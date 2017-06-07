@@ -16,6 +16,11 @@ public class AI {
         answer[0] = random.nextInt(15);
         answer[1] = random.nextInt(15);
         if (board.getIJ(answer[0], answer[1]) == 0){
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             return answer;
         }
         else return null;
