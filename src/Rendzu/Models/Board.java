@@ -211,10 +211,10 @@ public class Board {
                     int[] ways = get8Ways(i, j, eye);
                     for (int k = 0; k < ways.length; k++) {
                         if (eye == -1) {
-                            if (ways[k] == 5)
+                            if (ways[k] == 4)
                                 answer = true;
                         } else {
-                            if (ways[k] >= 5)
+                            if (ways[k] >= 4)
                                 answer = true;
                         }
                     }

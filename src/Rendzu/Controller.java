@@ -1,6 +1,8 @@
 package Rendzu;
 
+import Rendzu.Models.AI;
 import Rendzu.Models.Board;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -254,7 +256,9 @@ public class Controller {
 
     public Label labelForWhosTurnToGo;
     private Board board;
+    private AI ai;
     private int numberOfPassedSteps;
+    public CheckBox BOTCHECKBOX;
     public Pane p0000;
     public Pane p0001;
     public Pane p0002;
@@ -497,6 +501,9 @@ public class Controller {
 
     public void newGame() {
         setPanes();
+        if (BOTCHECKBOX.isSelected()){
+            ai = new AI();
+        }
         for (int i = 0; i < 15; i++)
             for (int j = 0; j < 15; j++)
                 panes[i][j].getChildren().clear();
@@ -528,7 +535,9 @@ public class Controller {
                 }
         if (board.getGame()) {
             board.makeStep(ii, jj, board.getActive());
-
+            if (BOTCHECKBOX.isSelected()){
+                int[] st = ai.calculate(board);
+            }
         }
         observer();
     }
