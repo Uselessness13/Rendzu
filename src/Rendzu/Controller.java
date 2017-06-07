@@ -12,6 +12,7 @@ public class Controller {
 
     public static Pane[][] panes = new Pane[15][15];
 
+
     public void setPanes() {
         panes[0][0] = p0000;
         panes[0][1] = p0001;
@@ -253,6 +254,7 @@ public class Controller {
         panes[14][13] = p1413;
         panes[14][14] = p1414;
     }
+
 
     public Label labelForWhosTurnToGo;
     private Board board;

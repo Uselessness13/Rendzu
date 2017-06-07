@@ -8,7 +8,8 @@
 .button {
     -fx-background-image: url(Images/buttonSkip.png);
         -fx-background-repeat: stretch;
-        -fx-background-size: 350 71;
+        -fx-background-size: 330 67;
         -fx-background-position: center center;
 }
+
 
