@@ -552,11 +552,18 @@ public class Controller {
                 System.out.println("selected");
                 if (board.getActive() == -1) {
                     System.out.println("-1 kfkhjg");
+                    int counter = 0;
                     int[] st = BOT.calculate(board);
                     while (st == null) {
+                        counter++;
                         st = BOT.calculate(board);
+
+                        if (counter > 300)
+                            break;
                     }
-                    board.makeStep(st[0], st[1], board.getActive());
+                    if (st != null) {
+                        board.makeStep(st[0], st[1], board.getActive());
+                    } else board.passStep();
                 }
             }
         }
