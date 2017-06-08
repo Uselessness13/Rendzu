@@ -2,7 +2,7 @@ package Rendzu;
 
 import Rendzu.Models.BOT;
 import Rendzu.Models.Board;
-import Rendzu.Models.Sound;
+//import Rendzu.Models.Sound;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;

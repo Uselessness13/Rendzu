@@ -40,7 +40,9 @@ public class BOT {
                                 max = currentWays[k];
                                 int x = k == 0 ? i + 1 : k == 1 ? i + 1 : k == 2 ? i + 1 : k == 3 ? i : k == 4 ? i - 1 : k == 5 ? i - 1 : k == 6 ? i - 1 : i;
                                 int y = k == 0 ? j + 1 : k == 1 ? j : k == 2 ? j - 1 : k == 3 ? j - 1 : k == 4 ? j - 1 : k == 5 ? j : k == 6 ? j + 1 : j + 1;
-                                if (newBoard.getIJ(x,y) == 0)
+                                x = x > 14 ? 14 : x < 0 ? 0 : x;
+                                y = y > 14 ? 14 : y < 0 ? 0 : y;
+                                if (newBoard.getIJ(x, y) == 0)
                                     answer = new int[]{x, y};
                             }
                         }
