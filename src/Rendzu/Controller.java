@@ -2,12 +2,16 @@ package Rendzu;
 
 import Rendzu.Models.BOT;
 import Rendzu.Models.Board;
+import Rendzu.Models.Sound;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javax.sound.sampled.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Controller {
 
@@ -519,11 +523,11 @@ public class Controller {
     void recognize() {
         labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (board.getActive() == 1 ? "YOU" : "ALIEN") : "DRAW");
         if (board.checkForWin(1)) {
-            forSomeText.setText("U WIN");
+            forSomeText.setText("U WIIIN");
             labelForWhosTurnToGo.setText("(=^.^=)");
         }
         if (board.checkForWin(-1)) {
-            forSomeText.setText("U LOSE");
+            forSomeText.setText("U LOOOSE");
             labelForWhosTurnToGo.setText("(=^.^=)");
         }
     }
@@ -591,6 +595,7 @@ public class Controller {
         observer();
     }
 
+    }
 
-}
+
 
