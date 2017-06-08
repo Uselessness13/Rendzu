@@ -1,6 +1,6 @@
 package Rendzu;
 
-import Rendzu.Models.AI;
+import Rendzu.Models.BOT;
 import Rendzu.Models.Board;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -260,7 +260,7 @@ public class Controller {
     public Label forSomeText;
     public Label labelForWhosTurnToGo;
     private Board board;
-    private AI BOT;
+    private Rendzu.Models.BOT BOT;
     private int numberOfPassedSteps;
     public CheckBox BOTCHECKBOX;
     public Pane p0000;
@@ -506,7 +506,7 @@ public class Controller {
     public void newGame() {
         setPanes();
         if (BOTCHECKBOX.isSelected()) {
-            BOT = new AI();
+            BOT = new BOT();
         }
         for (int i = 0; i < 15; i++)
             for (int j = 0; j < 15; j++)
@@ -559,6 +559,7 @@ public class Controller {
                         st = BOT.calculate(board);
 
                         if (counter > 300)
+                            counter = 0;
                             break;
                     }
                     if (st != null) {
