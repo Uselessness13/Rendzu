@@ -2,6 +2,7 @@ package Rendzu;
 
 import Rendzu.Models.AI;
 import Rendzu.Models.Board;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -255,7 +256,8 @@ public class Controller {
         panes[14][14] = p1414;
     }
 
-
+    public Button forStart;
+    public Label forSomeText;
     public Label labelForWhosTurnToGo;
     private Board board;
     private AI ai;
@@ -516,10 +518,14 @@ public class Controller {
 
     void recognize() {
         labelForWhosTurnToGo.setText(numberOfPassedSteps < 2 ? (board.getActive() == 1 ? "YOU" : "ALIEN") : "DRAW");
-        if (board.checkForWin(1))
-            labelForWhosTurnToGo.setText("U WIN");
-        if (board.checkForWin(-1))
-            labelForWhosTurnToGo.setText("U LOSE");
+        if (board.checkForWin(1)) {
+            forSomeText.setText("U WIN");
+            labelForWhosTurnToGo.setText("(=^.^=)");
+        }
+        if (board.checkForWin(-1)) {
+            forSomeText.setText("U LOSE");
+            labelForWhosTurnToGo.setText("(=^.^=)");
+        }
     }
 
     void observer() {

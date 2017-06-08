@@ -7,9 +7,16 @@
 
 .button {
     -fx-background-image: url(Images/buttonSkip.png);
-        -fx-background-repeat: stretch;
-        -fx-background-size: 330 67;
-        -fx-background-position: center center;
+    -fx-background-repeat: stretch;
+    -fx-background-size: 375 39;
+    -fx-background-position: center center;
+    -fx-background-color: transparent;
 }
 
-
+.start {
+    -fx-background-image: url(Images/forStart.png);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 414 60;
+    -fx-background-position: center center;
+    -fx-background-color: transparent;
+}
