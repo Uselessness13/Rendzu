@@ -106,6 +106,8 @@ public class Board {
                 // проверяем прямые
                 if (dAnswer + uAnswer == 4 || lAnswer + rAnswer == 4 || dlAnswer + urAnswer == 4 || ulAnswer + drAnswer == 4)
                     return true;
+                if ((dAnswer == 1 && uAnswer == 1 && rAnswer == 1 && lAnswer == 1) || (ulAnswer == 1 && urAnswer == 1 && drAnswer == 1 && dlAnswer == 1))
+                    return false;
                 // проверка на длинный ряд
                 if (dAnswer + uAnswer == 5 || lAnswer + rAnswer == 5 || dlAnswer + urAnswer == 5 || ulAnswer + drAnswer == 5)
                     return false;
@@ -131,6 +133,7 @@ public class Board {
 
 
     public int[] get8Ways(int i, int j, int eye) {
+        System.out.println("giving 8 ways from " + i + ";" + j);
         int ux = i - 1, uAnswer = 0;
         while (ux >= 0) {
             if (board[ux][j] == eye) {

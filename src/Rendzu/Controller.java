@@ -260,7 +260,7 @@ public class Controller {
     public Label forSomeText;
     public Label labelForWhosTurnToGo;
     private Board board;
-    private AI ai;
+    private AI BOT;
     private int numberOfPassedSteps;
     public CheckBox BOTCHECKBOX;
     public Pane p0000;
@@ -506,7 +506,7 @@ public class Controller {
     public void newGame() {
         setPanes();
         if (BOTCHECKBOX.isSelected()) {
-            ai = new AI();
+            BOT = new AI();
         }
         for (int i = 0; i < 15; i++)
             for (int j = 0; j < 15; j++)
@@ -552,9 +552,9 @@ public class Controller {
                 System.out.println("selected");
                 if (board.getActive() == -1) {
                     System.out.println("-1 kfkhjg");
-                    int[] st = ai.calculate(board);
+                    int[] st = BOT.calculate(board);
                     while (st == null) {
-                        st = ai.calculate(board);
+                        st = BOT.calculate(board);
                     }
                     board.makeStep(st[0], st[1], board.getActive());
                 }
