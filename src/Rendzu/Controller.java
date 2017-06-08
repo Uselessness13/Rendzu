@@ -517,6 +517,8 @@ public class Controller {
                 panes[i][j].getChildren().clear();
         board = new Board();
         numberOfPassedSteps = 0;
+        forSomeText.setText(" ");
+        labelForWhosTurnToGo.setText(" ");
         observer();
     }
 
