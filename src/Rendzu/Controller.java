@@ -517,6 +517,8 @@ public class Controller {
                 panes[i][j].getChildren().clear();
         board = new Board();
         numberOfPassedSteps = 0;
+        forSomeText.setText(" ");
+        labelForWhosTurnToGo.setText(" ");
         observer();
     }
 
@@ -562,7 +564,7 @@ public class Controller {
                         counter++;
                         st = BOT.calculate(board);
 
-                        if (counter > 300)
+                        if (counter > 1000)
                             counter = 0;
                             break;
                     }

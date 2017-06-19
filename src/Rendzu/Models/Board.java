@@ -133,7 +133,7 @@ public class Board {
 
 
     public int[] get8Ways(int i, int j, int eye) {
-        System.out.println("giving 8 ways from " + i + ";" + j);
+//        System.out.println("giving 8 ways from " + i + ";" + j);
         int ux = i - 1, uAnswer = 0;
         while (ux >= 0) {
             if (board[ux][j] == eye) {
