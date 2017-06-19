@@ -20,3 +20,11 @@
     -fx-background-position: center center;
     -fx-background-color: transparent;
 }
+
+.buttona {
+    -fx-background-image: url(Images/MUSIC.png);
+    -fx-background-repeat: stretch;
+    -fx-background-size: 100 99;
+    -fx-background-position: center center;
+    -fx-background-color: transparent;
+}

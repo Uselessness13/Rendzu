@@ -511,7 +511,7 @@ public class Controller {
     boolean play = false;
 
     public void newGame() {
-        File file = new File("C:/Users/Useless/Desktop/slow.mp3");
+        File file = new File("C:/slow.mp3");
         String filez = file.toURI().toString();
         Media sound = new Media(filez);
         mediaPlayer = new MediaPlayer(sound);
@@ -534,18 +534,17 @@ public class Controller {
         if (board.checkForWin(1)) {
             forSomeText.setText("U WIIIN");
             labelForWhosTurnToGo.setText("(=^.^=)");
-        }
-        if (board.checkForWin(-1)) {
-            forSomeText.setText("U LOOOSE");
-            labelForWhosTurnToGo.setText("(=^.^=)");
+        } else {
+            if (board.checkForWin(-1)) {
+                forSomeText.setText("U LOOOSE");
+                labelForWhosTurnToGo.setText("(=^.^=)");
+            }
         }
     }
-
     public void music() {
         if (!play) {
             mediaPlayer.play();
             play = !play;
-        } else {
             mediaPlayer.pause();
             play = !play;
         }
