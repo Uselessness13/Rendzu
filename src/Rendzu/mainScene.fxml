@@ -4,7 +4,6 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -18,13 +17,6 @@
             <font>
                 <Font name="Chiller" size="69.0" />
             </font>
-         <effect>
-            <Lighting bumpInput="$null" diffuseConstant="1.6" specularConstant="1.07" specularExponent="31.16" surfaceScale="3.94">
-               <light>
-                  <Light.Distant color="#bfbdbd" />
-               </light>
-            </Lighting>
-         </effect>
         </Label>
         <Pane fx:id="p0000" layoutX="28.0" layoutY="28.0" onMouseClicked="#clickOnPane" prefHeight="39.0" prefWidth="39.0" />
         <Pane fx:id="p0001" layoutX="67.0" layoutY="28.0" onMouseClicked="#clickOnPane" prefHeight="39.0" prefWidth="39.0" />
@@ -288,6 +280,7 @@
          </textFill>
       </Label>
       <Button fx:id="forStart" layoutX="611.0" layoutY="542.0" mnemonicParsing="false" onMouseClicked="#newGame" prefHeight="48.0" prefWidth="417.0" styleClass="start" stylesheets="@styles.css" />
+      <Button layoutX="687.0" layoutY="325.0" mnemonicParsing="false" prefHeight="84.0" prefWidth="193.0" text="MUSIC" onMouseClicked="#music"/>
 
     </children>
 </AnchorPane>
