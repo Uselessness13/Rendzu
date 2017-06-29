@@ -511,7 +511,7 @@ public class Controller {
     boolean play = false;
 
     public void newGame() {
-        File file = new File("C:/Users/Useless/Desktop/slow.mp3");
+        File file = new File("C:/musik.mp3");
         String filez = file.toURI().toString();
         Media sound = new Media(filez);
         mediaPlayer = new MediaPlayer(sound);
@@ -541,13 +541,16 @@ public class Controller {
             }
         }
     }
+
     public void music() {
         if (!play) {
             mediaPlayer.play();
             play = !play;
+        } else {
             mediaPlayer.pause();
             play = !play;
         }
+
     }
 
     void observer() {

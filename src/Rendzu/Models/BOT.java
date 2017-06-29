@@ -15,17 +15,12 @@ public class BOT {
     }
 
     public int[] calculateStep(Board board) {
-        ArrayList<Integer> ours = new ArrayList<>();
-        ArrayList<Integer> theirs = new ArrayList<>();
-        ArrayList<int[]> ourAnswers = new ArrayList<>();
-        ArrayList<int[]> theirAnswers = new ArrayList<>();
         int[] answer = new int[2];
-        answer[0] = random.nextInt(15);
-        answer[1] = random.nextInt(15);
+//        answer[0] = random.nextInt(15);
+//        answer[1] = random.nextInt(15);
 
         Board newBoard = new Board(board);
-        int maxPlayers = 0;
-        int maxBots = 0;
+        int maxPlayers = 0, maxBots = 0;
         for (int i = 0; i < 15; i++)
             for (int j = 0; j < 15; j++)
                 if (newBoard.getIJ(i, j) != 0) {
@@ -40,6 +35,9 @@ public class BOT {
                                 y = y > 14 ? 14 : y < 0 ? 0 : y;
                                 if (newBoard.getIJ(x, y) == 0) {
                                     answer = (new int[]{x, y});
+                                    if (maxPlayers >= 2) {
+                                        return answer;
+                                    }
                                 }
                             }
                         }
@@ -53,8 +51,8 @@ public class BOT {
                                 x = x > 14 ? 14 : x < 0 ? 0 : x;
                                 y = y > 14 ? 14 : y < 0 ? 0 : y;
                                 if (newBoard.getIJ(x, y) == 0) {
-                                    answer = (new int[]{x, y});
-                                    if (maxBots >= 3 & maxBots >= maxPlayers)
+                                    answer = new int[]{x, y};
+                                    if (maxBots >= 3)
                                         return answer;
                                 }
                             }
