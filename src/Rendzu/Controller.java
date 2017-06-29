@@ -511,7 +511,7 @@ public class Controller {
     boolean play = false;
 
     public void newGame() {
-        File file = new File("C:/slow.mp3");
+        File file = new File("C:/Users/Useless/Desktop/slow.mp3");
         String filez = file.toURI().toString();
         Media sound = new Media(filez);
         mediaPlayer = new MediaPlayer(sound);
@@ -575,10 +575,10 @@ public class Controller {
                 if (board.getActive() == -1) {
                     System.out.println("-1 kfkhjg");
                     int counter = 0;
-                    int[] st = BOT.calculate(board);
+                    int[] st = BOT.calculateStep(board);
                     while (st == null) {
                         counter++;
-                        st = BOT.calculate(board);
+                        st = BOT.calculateStep(board);
 
                         if (counter > 1000)
                             counter = 0;
