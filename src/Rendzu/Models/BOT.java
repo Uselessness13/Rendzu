@@ -2,6 +2,7 @@ package Rendzu.Models;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Random;
 
 /**
@@ -22,7 +23,7 @@ public class BOT {
         Board newBoard = new Board(board);
         int maxPlayers = 0, maxBots = 0;
         for (int i = 0; i < 15; i++)
-            for (int j = 0; j < 15; j++)
+            for (int j = 0; j < 15; j++) {
                 if (newBoard.getIJ(i, j) != 0) {
                     if (newBoard.getIJ(i, j) == 1) {
                         int[] currentWays = newBoard.get8Ways(i, j, 1);
@@ -58,8 +59,60 @@ public class BOT {
                             }
                         }
                     }
+                } else {
+                    int[] currentb = newBoard.get8Ways(i,j,-1);
+                    int[] currentp = newBoard.get8Ways(i,j,1);
+                    if (currentb[0]+currentb[4] >= 3 || currentb[1]+currentb[5] >= 3 || currentb[2] + currentb[6] >= 3 || currentb[3] + currentb[7] >=3)
+                        return new int[]{i,j};
+                    if (currentp[0]+currentp[4] >= 3 || currentp[1]+currentp[5] >= 3 || currentp[2] + currentp[6] >= 3 || currentp[3] + currentp[7] >=3)
+                        return new int[]{i,j};
                 }
+            }
 
+//        HashMap<Integer, int[]> bot = new HashMap<>();
+//        HashMap<Integer, int[]> player = new HashMap<>();
+//        for (int i = 0; i < 15; i++)
+//            for (int j = 0; j < 15; j++) {
+//                if (board.getIJ(i, j) == 0) {
+//                    int[] currentCellForBot = board.get8Ways(i, j, -1);
+//                    int[] currentCellForPlayer = board.get8Ways(i, j, 1);
+//                    int mb = 0, mp = 0;
+//                    for (int k = 0; k < 8; k++) {
+//                        mb = mb > currentCellForBot[k]    ? currentCellForBot[k]    : mb;
+//                        mp = mp > currentCellForPlayer[k] ? currentCellForPlayer[k] : mp;
+//                    }
+//                    if (mb >= mp) {
+//                        bot.put(mb + mp, new int[]{i, j});
+//                    } else player.put(mb + mp, new int[]{i, j});
+//                }
+//            }
+//        System.out.println(bot);
+//        System.out.println(player);
+//        ArrayList<Integer> botKeys = new ArrayList<>();
+//        ArrayList<Integer> playerKeys = new ArrayList<>();
+//        int mb = 0;
+//        botKeys.addAll(bot.keySet());
+//        playerKeys.addAll(player.keySet());
+//        System.out.println(botKeys);
+//        System.out.println(playerKeys);
+//        for (Integer botKey : botKeys) {
+//            System.out.print(Arrays.toString(bot.get(botKey)) + ", ");
+//            mb = botKey > mb ? botKey : mb;
+//        }
+//        System.out.println();
+//        int[] ba = bot.get(mb);
+//        System.out.println("BA = " + ba);
+//        int mp = 0;
+//        for (Integer playerKey : playerKeys) {
+//            System.out.print(Arrays.toString(player.get(playerKey)) + ", ");
+//            mp = playerKey > mp ? playerKey : mp;
+//        }
+//        int[] pa = bot.get(mp);
+//        System.out.println("PA = " + pa);
+//        if (mb > mp)
+//            answer = ba;
+//        else answer = pa;
+//        if (answer != null) {
         answer[0] = answer[0] > 14 ? 14 : answer[0] < 0 ? 0 : answer[0];
         answer[1] = answer[1] > 14 ? 14 : answer[1] < 0 ? 0 : answer[1];
 
@@ -73,4 +126,5 @@ public class BOT {
             return answer;
         } else return null;
     }
+
 }
